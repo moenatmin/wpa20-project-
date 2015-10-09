@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Category;
-use Session;
+
 
 class CategoryController extends Controller
 {
@@ -52,7 +52,7 @@ class CategoryController extends Controller
        //$input = $request->except('_token');
         $categories = Category::insert($request->except('_token'));
 
-        return redirect('admin/categories')->with('message', 'Category Created.');
+        return redirect('admin/categories');
     }
 
     /**
